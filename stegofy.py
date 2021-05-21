@@ -67,7 +67,7 @@ def stegofy(a,b,c):
 
 #####run the code 	
 #message = raw_input("Type your message: \n")
-print "Type your message. When finished, press Ctrl-d to continue."
+print "Type your message. When finished, enter to new line and press Ctrl-d to continue."
 message = sys.stdin.read()
 picture = raw_input("Picture file (if png, please ensure no transparency -- png is wonky): \n")
 #while not picture.endswith(".jpg") or not path.isfile(picture):
