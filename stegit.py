@@ -4,10 +4,10 @@ Steg it!
 """
 
 
-option = raw_input("Would you like to [S]tegify or [D]estegify?: ")
+option = input("Would you like to [S]tegify or [D]estegify?: ")
 while option not in ['S','s','D','d']:
-	print "Invalid response"
-	option = raw_input("To stegify, enter S. To destegify, enter D: ")
+	print("Invalid response")
+	option = input("To stegify, enter S. To destegify, enter D: ")
 def stegit(x):
 	if x == "S" or x == 's':
 		import stegofy

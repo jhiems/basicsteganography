@@ -27,7 +27,7 @@ def stegofy(a,b,c):
 	binaryMessage = ''.join('{:08b}'.format(ord(c)) for c in a) # from https://stackoverflow.com/questions/11599226/how-to-convert-binary-string-to-ascii-string-in-python#11599702
 	#print binaryMessage
 	if len(binaryMessage)> totalPixles:
-		print "Uh, oh... there aren't enough pixles to hide that message!!! Please shorten the message or choose a higher resolution picture! I'm going to generate crap now :) \n"
+		print("Uh, oh... there aren't enough pixles to hide that message!!! Please shorten the message or choose a higher resolution picture! I'm going to generate crap now! \n")
 	else:	
 		counter = 0
 		for i in newList:
@@ -61,27 +61,28 @@ def stegofy(a,b,c):
 		im2 = Image.new(mode = 'RGB', size = (width, height))
 		im2.putdata(newPic)
 		im2.save(c)
-		print "All done!"
+		print("All done!")
 
 
 
 #####run the code 	
-#message = raw_input("Type your message: \n")
-print "Type your message. When finished, enter to new line and press Ctrl-d to continue."
+#message = input("Type your message: \n")
+print("Type your message. When finished, enter to new line and press Ctrl-d to continue.")
 message = sys.stdin.read()
-picture = raw_input("Picture file (if png, please ensure no transparency -- png is wonky): \n")
+message +='\x00'
+picture = input("Picture file (if png, please ensure no transparency -- png is wonky): \n")
 #while not picture.endswith(".jpg") or not path.isfile(picture):
 while not path.isfile(picture):
-		print "Picture does not exist... "
-		picture = raw_input("Picture file: ")
+		print("Picture does not exist... ")
+		picture = input("Picture file: ")
 	
-#size1 = int(raw_input("Picture size 1 "))
-#size2 = int(raw_input("Picture size2 "))
-new = raw_input("New picture name (must be png): \n")
+#size1 = int(input("Picture size 1 "))
+#size2 = int(input("Picture size2 "))
+new = input("New picture name (must be png): \n")
 
 while new.endswith(".png") == False or len(new) <5:
-	print "File must have .png extension... "
-	new = raw_input("New picture name (must be png) \n")
+	print("File must have .png extension... ")
+	new = input("New picture name (must be png) \n")
 
 
 stegofy(message, picture, new)
