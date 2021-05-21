@@ -7,6 +7,7 @@ Works with jpg, png that don't have transparency, and tiff. Does not work with B
 
 from PIL import Image
 from os import path
+import sys
 #import binascii
 
 def stegofy(a,b,c):
@@ -65,7 +66,9 @@ def stegofy(a,b,c):
 
 
 #####run the code 	
-message = raw_input("Type your message: \n")
+#message = raw_input("Type your message: \n")
+print "Type your message. When finished, press Ctrl-d to continue."
+message = sys.stdin.read()
 picture = raw_input("Picture file (if png, please ensure no transparency -- png is wonky): \n")
 #while not picture.endswith(".jpg") or not path.isfile(picture):
 while not path.isfile(picture):
