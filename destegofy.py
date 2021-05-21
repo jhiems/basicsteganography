@@ -9,7 +9,6 @@ def destegofy(x):
 			message = message + "0"
 		elif i[2] % 2 == 1:
 			message = message +"1"	
-	print("Beginning")
 	decoded_message = ""
 	for i in range(0, len(message), 8):
 		temp_char = chr(int(message[i:i+8], 2))
@@ -18,7 +17,6 @@ def destegofy(x):
 		else:
 			decoded_message += temp_char #''.join(chr(int(message[i:i+8], 2))
 	#message = ''.join(chr(int(message[i:i+8], 2)) for i in range(0, len(message), 8))# from https://stackoverflow.com/questions/11599226/how-to-convert-binary-string-to-ascii-string-in-python#11599702
-	print("Here and strlen = ", len(decoded_message))
 	print(decoded_message)
 
 picture = input("Name of picture ")
